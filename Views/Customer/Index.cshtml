@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/Content/Style.css">
+</head>
+<body>
+
+    <div class="divList" ng-controller="myCntrl">
+
+
+        <mdb-card>
+            <mdb-card-header class="info-color white-text text-center py-4">
+                <h1>
+                    <strong>Customers Details Page</strong>
+                </h1>
+            </mdb-card-header>
+
+        </mdb-card>
+
+
+
+
+        <div class="divList">
+            <div>
+                <div>
+                    <label style="display:none">ID</label>
+                    <input disabled="disabled" type="text" placeholder="Cutomer ID" ng-model="customerId" style="display:none" />
+                </div>
+                <div>
+                    <label>Customer Name </label>
+                    <input type="text" ng-model="customerName" placeholder="Cutomer Name" />
+                    <label>Class </label>
+                    <input type="text" ng-model="customerClass" placeholder="Cutomer Class" />
+                </div>
+            </div>
+            <div>
+                <label>Phone </label>
+                <input type="text" ng-model="customerPhone" placeholder="Cutomer Phone" />
+                <label>Email </label>
+                <input type="text" ng-model="customerEmail" placeholder="Cutomer Email" />
+            </div>
+           
+            <div>
+                    <label>Comment </label>
+                    <input type="text" ng-model="customerComment" placeholder="Comment" />
+            </div>
+
+            <input type="button" ng-disabled='disabledSave' class="btnAdd" value="Save" ng-click="AddUpdateCustomer()" />
+            <input type="button" ng-disabled='disabledUpdate' class="btnAdd" value="Update" ng-click="AddUpdateCustomer()" />
+            <input type="button" class="btnClear" value="Clear" ng-click="clearFields()" />
+        </div>
+
+
+
+        <div class="divList">
+            <table cellpadding="12" class="table table-bordered ">
+                <thead>
+                    <tr>
+                        <td><b>ID</b></td>
+                        <td><b>Name</b></td>
+                        <td><b>Class</b></td>
+                        <td><b>Phone</b></td>
+                        <td><b>Email</b></td>
+                        <td><b>Comment</b></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="customer in customers" ng-click="editCustomer(customer)">
+                        <td>
+                            {{customer.ID}}
+                        </td>
+                        <td>
+                            {{customer.CustomerName}}
+                        </td>
+                        <td>
+                            {{customer.Class}}
+                        </td>
+                        <td>
+                            {{customer.Phone}}
+                        </td>
+                        <td>
+                            {{customer.Email}}
+                        </td>
+                        <td>
+                            {{customer.Comment}}
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+            <input type="button" class="btnRed" value=" Delete" ng-click="deleteCustomer(customer)" />
+        </div>
+        </div>
+</body>
+</html>

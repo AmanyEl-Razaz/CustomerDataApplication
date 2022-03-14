@@ -1,0 +1,50 @@
+﻿table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    background-color: #e6f7f7;
+}
+
+th, td {
+    text-align: center;
+    border-bottom: 1px solid #DDD;
+}
+
+tr:hover {
+    background-color: #D6EEEE;
+}
+
+input[type=button] {
+    background-color: #6bb69a;
+    border: none;
+    color: white;
+    padding: 6px 40px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+}
+
+.divList {
+    border: 2px solid #e7f7f4;
+    border-radius: 5px;
+    background-color: #eaf6f48f;
+    padding: 20px;
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 6px 5px;
+    margin: 5px 5px;
+    display: inline-block;
+    border: 1px solid #74ad98;
+    border-radius: 5px;
+    box-sizing: content-box;
+}
+
+label {
+    width: 8%;
+}
+
