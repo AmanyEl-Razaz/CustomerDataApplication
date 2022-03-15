@@ -1,6 +1,6 @@
 Customer Data Application
 - This Project was created to apply CRUD operations on a DB table for Customer Data.
-- Using MVC, angularJS and SQL Server technologies to apply reqired actions.
+- Using MVC, Entity Frame work, angularJS and SQL Server technologies to apply reqired actions.
 - This project contains APIs for Add/Update/Delete/View data related to customers. 
 - You can find database model and connection to apply required actions.
 - Inside the project you can find CustomerData.sql to create required Database table [Customers] and stored procedure [customer_Data] and connect it to the project.
