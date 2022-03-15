@@ -85,4 +85,75 @@
     $scope.clearFields = function () {
         ClearFields();
     }
+
+    var dir = "des";
+   // $scope.sortById = "";
+    $scope.sortBy = function (colName) {
+        ClearSort();
+        if (colName == 'id') {
+            if (dir == "des") {
+                $scope.customers.sort((a, b) => (a.ID < b.ID) ? -1 : ((a.ID > b.ID) ? 1 : 0));
+                $scope.sortById = "A-Z";
+            } else {
+                $scope.customers.sort((a, b) => (b.ID < a.ID) ? -1 : ((b.ID > a.ID) ? 1 : 0));
+                $scope.sortById = "Z-A";
+            }
+
+        }
+        else if (colName == 'name') {
+            if (dir == "des") {
+                $scope.customers.sort((a, b) => (a.CustomerName < b.CustomerName) ? -1 : ((a.CustomerName > b.CustomerName) ? 1 : 0));
+                $scope.sortByName = "A-Z";
+            } else {
+                $scope.customers.sort((a, b) => (b.CustomerName < a.CustomerName) ? -1 : ((b.CustomerName > a.CustomerName) ? 1 : 0));
+                $scope.sortByName = "Z-A";
+            }
+        }
+        else if (colName == 'class') {
+            if (dir == "des") {
+                $scope.customers.sort((a, b) => (a.Class < b.Class) ? -1 : ((a.Class > b.Class) ? 1 : 0));
+                $scope.sortByClass = "A-Z";
+            } else {
+                $scope.customers.sort((a, b) => (b.Class < a.Class) ? -1 : ((b.Class > a.Class) ? 1 : 0));
+                $scope.sortByClass = "Z-A";
+            }
+        }
+        else if (colName == 'phone') {
+            if (dir == "des") {
+                $scope.customers.sort((a, b) => (a.Phone < b.Phone) ? -1 : ((a.Phone > b.Phone) ? 1 : 0));
+                $scope.sortByPhone = "A-Z";
+            } else {
+                $scope.customers.sort((a, b) => (b.Phone < a.Phone) ? -1 : ((b.Phone > a.Phone) ? 1 : 0));
+                $scope.sortByPhone = "Z-A";
+            }
+        }
+        else if (colName == 'email') {
+            if (dir == "des") {
+                $scope.customers.sort((a, b) => (a.Email < b.Email) ? -1 : ((a.Email > b.Email) ? 1 : 0));
+                $scope.sortByEmail = "A-Z";
+            } else {
+                $scope.customers.sort((a, b) => (b.Email < a.Email) ? -1 : ((b.Email > a.Email) ? 1 : 0));
+                $scope.sortByEmail = "Z-A";
+            }
+        } 
+
+        if (dir == "des") {
+            dir = "ass";
+        }else {
+            dir = "des";
+        }
+    }
+
+    $scope.unSort = function () {
+        $scope.customers.sort((a, b) => (a.ID < b.ID) ? -1 : ((a.ID > b.ID) ? 1 : 0));
+        ClearSort();
+    }
+
+    function ClearSort() {
+        $scope.sortById = "";
+        $scope.sortByName = "";
+        $scope.sortByClass = "";
+        $scope.sortByPhone = "";
+        $scope.sortByEmail = "";
+    }
 });

@@ -15,7 +15,7 @@
         <mdb-card>
             <mdb-card-header class="info-color white-text text-center py-4">
                 <h1>
-                    <strong>Customers Details Page</strong>
+                    <strong>Customers Details </strong>
                 </h1>
             </mdb-card-header>
 
@@ -57,14 +57,15 @@
 
 
         <div class="divList">
+            <input type="button" class="btnUnSort" value="UnSort" ng-click="unSort()" />
             <table cellpadding="12" class="table table-bordered ">
                 <thead>
-                    <tr>
-                        <td><b>ID</b></td>
-                        <td><b>Name</b></td>
-                        <td><b>Class</b></td>
-                        <td><b>Phone</b></td>
-                        <td><b>Email</b></td>
+                    <tr >
+                        <td class="sort" ng-click="sortBy('id')"><b>ID {{sortById}}</b></td>
+                        <td class="sort" ng-click="sortBy('name')"><b>Name {{sortByName}}</b></td>
+                        <td class="sort" ng-click="sortBy('class')"><b>Class {{sortByClass}}</b></td>
+                        <td class="sort" ng-click="sortBy('phone')"><b>Phone {{sortByPhone}}</b></td>
+                        <td class="sort" ng-click="sortBy('email')"><b>Email {{sortByEmail}}</b></td>
                         <td><b>Comment</b></td>
                     </tr>
                 </thead>
